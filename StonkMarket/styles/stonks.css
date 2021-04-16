@@ -1,0 +1,99 @@
+* {
+  margin: 0 auto;
+}
+
+body {
+  background-color: white;
+}
+.header_container {
+  display: grid;
+  width: 80%;
+  background-color: white;
+  grid-template-columns: 10% 300px auto 10%;
+}
+
+.main_container {
+  display: grid;
+  width: 80%;
+  background-color: white;
+}
+/*COMPUTER IMAGE   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+.comp {
+  width: 300px;
+  height: 300px;
+  grid-column: 1/1;
+  grid-row: 1/2;
+}
+
+#comp1{
+  z-index: 4;
+}
+
+#comp2 {
+  z-index: 1;
+}
+
+/*HEADER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+#headcanvas {
+  position: fixed;
+  top: 55px;
+  left: 10%;
+  z-index: 3;
+  grid-row: 1/1;
+}
+
+#grid {
+  background-image: url("../images/grid.png");
+  background-repeat: repeat-x;
+  background-size: 500px;
+  position: fixed;
+  height: 50px;
+  width: 120%;
+  top: 120px;
+  left: 10%;
+  z-index: 2;
+  animation: slide 10s linear infinite;
+}
+
+#bg1 {
+  width: 100px;
+  height: 300px;
+  z-index: 3;
+  background-color: #025482;
+  position: fixed;
+  left: 10%;
+}
+#bg2 {
+  width: 10%;
+  height: 300px;
+  z-index: 3;
+  background-color: #025482;
+  position: fixed;
+  left: 0;
+}
+#bg3 {
+  width: 10%;
+  height: 300px;
+  z-index: 3;
+  background-color: #025482;
+  position: fixed;
+  right: 0;
+}
+
+@keyframes slide {
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-20%, 0, 0); /* The image width */
+  }
+}
+
+h1 {
+  text-align: center;
+  object-position: center;
+  color: #fff;
+  position: fixed;
+  top: 225px;
+  left: 40%;
+}
