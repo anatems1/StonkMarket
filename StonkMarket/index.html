@@ -8,17 +8,17 @@
     <link rel='stylesheet' href='styles/stonks.css' />
   </head>
 
-  <body onload="init()">
+  <body onload="init()" onresize="resizer()">
     <div class='header_container'>
       <img class='comp' id='comp1' src="images/comp1.png" alt="computer foreground"/>
       <img class='comp' id='comp2' src="images/comp2.png" alt="computer foreground"/>
+      <img class='comp2' id='comp3' src="images/comp3.png" alt="computer foreground"/>
+      <img class='comp2' id='comp4' src="images/comp4.png" alt="computer foreground"/>
       <canvas id="headcanvas"></canvas>
-      <h1>STONK MARKET</h1>
+      <img class='stonklogo' src="images/stonklogo.png" alt="website logo"/>
       <div id="grid"></div>
-      <div id="bg1"></div>
       <div id="bg2"></div>
       <div id="bg3"></div>
-
     </div>
 
     <div class='menu_container'>
@@ -28,6 +28,8 @@
     <div class='main_container'>
       <h2>Bulls</h2>
       <h2>Bears</h2>
+      <img class='monitor' src="images/monitor.png" alt="computer monitor"/>
+      <div class='screen'></div>
     </div>
 
   </body>
