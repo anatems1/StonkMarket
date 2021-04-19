@@ -1,8 +1,38 @@
 function init() {
   drawcanva();
   theme();
+  topmovers();
+  noreload();
 }
 
+/*DISPLAYS TOP MOVERS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+function topmovers() {
+  j = ['GME', 'DOGE', 'AAPL', 'TSLA', 'AMD', 'NIO', 'MSFT', 'ENPH', 'BTC', 'SONY'];
+  for (var i = 0; i < 10; i++) {
+    document.getElementById("floppy" + (i + 1)).textContent = j[i];
+  }
+}
+
+/*FUNCTION TO SHOW STOCK CLICK%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+function stockshow() {
+  /*fades static on screen away*/
+  var fadeTarget = document.getElementById('screen');
+  var fadeEffect = setInterval(function () {
+       if (!fadeTarget.style.opacity) {
+           fadeTarget.style.opacity = 1;
+       }
+       if (fadeTarget.style.opacity > 0) {
+           fadeTarget.style.opacity -= 0.1;
+       } else {
+           clearInterval(fadeEffect);
+       }
+   }, 100);
+
+   var cnv = document.getElementById('chartarea');
+   var ctx = cnv.getContext('2d');
+}
+
+/*OVERACRCHING THEME .... INSTEAD OF CSS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 function theme() {
   theme1 = "#2a475e"; /*1st palette color*/
   theme2 = "black";
@@ -36,18 +66,24 @@ function theme() {
   }
 
 }
-/*used to see live update
-setInterval('timer()', 5000);*/
-function timer() {
+
+/*used to see live update.... to be deleted later*/
+var timedreload = setInterval(function() {
   location.reload();
+}, 5000);
+
+function noreload() {
+  clearInterval(timedreload)
 }
 
+/*ON PAGE RESIZE EVENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 function resizer() {
   var cnv = document.getElementById('headcanvas');
   var ctx = cnv.getContext('2d');
-  ctx.clearRect(0,0, 2000 , 110);
+  ctx.clearRect(0, 0, 2000, 110);
 }
 
+/*ANIMATED HEADER CANVAS %%%%%%%%%%%%%%%%%%%%S%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 function drawcanva() {
   var cnv = document.getElementById('headcanvas');
   var ctx = cnv.getContext('2d');
@@ -60,9 +96,10 @@ function drawcanva() {
   var i = 1;
   ctx.strokeStyle = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
 
+
   var drawLinesInterval = setInterval(function() {
     if (startx > window.innerWidth) {
-    /*clearInterval(drawLinesInterval2);*/
+      /*clearInterval(drawLinesInterval2);*/
       ctx.strokeStyle = 'white';
       ctx.closePath();
       ctx.closePa
@@ -74,18 +111,21 @@ function drawcanva() {
       count1 = count1 + 1;
     } else if (count1 > 5) {
       count1 = 0;
-      ctx.clearRect(0,0, 2000 , 110);
+      ctx.clearRect(0, 0, 2000, 110);
     }
-      ctx.lineWidth = 6;
-        ctx.strokeStyle = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
-        ctx.moveTo(startx, starty);
-        startx = startx + i;
-        starty = Math.floor(Math.random() * 90) + 1;
-        ctx.lineTo(startx, starty);
-        ctx.stroke();
-        i = i + 1;
+    ctx.lineWidth = 6;
+    ctx.strokeStyle = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+    ctx.moveTo(startx, starty);
+    startx = startx + i;
+    starty = Math.floor(Math.random() * 90) + 1;
+    ctx.lineTo(startx, starty);
+    ctx.stroke();
+    i = i + 1;
 
   }, 50);
+
+
+
 
 
 }

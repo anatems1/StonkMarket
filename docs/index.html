@@ -22,14 +22,33 @@
     </div>
 
     <div class='menu_container'>
+      <p id="inputtxt">Input Ticker:</p>
+      <p id="movertxt">Top Movers:</p>
+      <div class="input_container">
+      </div>
+      <div class="floppy_container">#N/A
+        <button class='floppy' id='floppy1' onclick="stockshow('1')">#N/A</button>
+        <button class='floppy' id='floppy2' onclick="stockshow('2')">#N/A</button>
+        <button class='floppy' id='floppy3' onclick="stockshow('3')">#N/A</button>
+        <button class='floppy' id='floppy4' onclick="stockshow('4')">#N/A</button>
+        <button class='floppy' id='floppy5' onclick="stockshow('5')">#N/A</button>
+        <button class='floppy' id='floppy6' onclick="stockshow('6')">#N/A</button>
+        <button class='floppy' id='floppy7' onclick="stockshow('7')">#N/A</button>
+        <button class='floppy' id='floppy8' onclick="stockshow('8')">#N/A</button>
+        <button class='floppy' id='floppy9' onclick="stockshow('9')">#N/A</button>
+        <button class='floppy' id='floppy10' onclick="stockshow('10')">#N/A</button>
 
+      </div>
     </div>
 
     <div class='main_container'>
       <h2>Bulls</h2>
       <h2>Bears</h2>
       <img class='monitor' src="images/monitor.png" alt="computer monitor"/>
-      <div class='screen'></div>
+      <div class='screen' id="screen"></div>
+      <div class='chartarea'>
+        <canvas id="chartarea"></canvas>
+      </div>
     </div>
 
   </body>

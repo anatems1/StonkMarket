@@ -1,5 +1,14 @@
+@font-face {
+  font-family: testfont;
+  src: url('../font/Antonio.ttf');
+}
+
 * {
   margin: 0 auto;
+}
+
+p, .floppy {
+  font-family: testfont;
 }
 
 body {
@@ -100,8 +109,68 @@ body {
 /*MENU %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .menu_container{
   height:127px;
+  display: grid;
+  grid-template-columns: 50% 50% 100px;;
+  grid-template-rows: 25px 102px;
   background-color: black;
-  border: 1px solid white;
+
+}
+#inputtxt, #movertxt {
+  grid-row: 1/1;
+  color: white;
+}
+
+#inputtxt {
+  grid-column: 1/1;
+}
+
+#movertxt {
+  grid-column: 2/2;
+}
+.input_container {
+  background-color: black;
+  grid-column: 1/1;
+  grid-row: 2/2;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+}
+
+.floppy_container {
+  grid-column: 3/3;
+  grid-row: 2/2;
+  display: flex;
+  background-color: black;
+  width: 2000px;
+  height: 100%;
+  animation: slide2 35s linear infinite;
+}
+
+.floppy {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 102px;
+  height: 100%;
+  border: 0px;
+  cursor: grab;
+  background-color: black;
+  padding: 0px auto;
+  background-image: url("../images/floppy.png");
+  background-size: contain;
+  background-color: grey;
+  background-repeat: no-repeat;
+  color: #16DB65;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+@keyframes slide2 {
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-3000px, 0, 0); /* The image width */
+  }
 }
 
 /*MAIN CONTIAINER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
@@ -125,9 +194,17 @@ body {
 .screen {
   background-image: url("../images/static.png");
   background-repeat: repeat;
+  z-index: 2;
   grid-column: 2/2;
   grid-row: 2/2;
   height: 100%;
   width: 80%;
+}
 
+.chartarea  {
+  grid-column: 2/2;
+  grid-row: 2/2;
+  height: 100%;
+  width: 80%;
+  background-color: white;
 }
