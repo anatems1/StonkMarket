@@ -35,4 +35,11 @@
   <td><a href='https://www.freepikcompany.com/legal#nav-freepik'>Freepik License</a></td>
   <td><a href='https://www.freepik.com/free-vector/floppy-disk_7029990.htm#page=1&query=floppy%20disk&position=7'>Link</a></td>
 </tr>
+<tr>
+  <td>Wood bg</td>
+  <td>A Gray Seamless Wood Texture</td>
+  <td>Phil</td>
+  <td><a href='https://www.myfreetextures.com/use-license/'>MyFreeTextures License</a></td>
+  <td><a href='https://www.myfreetextures.com/gray-seamless-wood-texture/'>Link</a></td>
+</tr>
 </table>
