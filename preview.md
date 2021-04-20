@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/anatems1/StonkMarket/blob/5dedb46fa4fd7c17f0566e5b5de7a7186aec851a/screenshots/preview.PNG" width="800px"/>
+<img src="https://github.com/anatems1/StonkMarket/blob/20d6caa3b90e3f74a46d61f53c478bd57887a00e/screenshots/preview.png" width="800px"/>
 <br />
 <a href="https://anatems1.github.io/StonkMarket/" target="_blank">https://anatems1.github.io/StonkMarket/</a>
 </p>
