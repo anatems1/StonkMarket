@@ -26,8 +26,13 @@
     <div class='menu_container'>
       <p id="inputtxt">Input Ticker:</p>
       <p id="movertxt">Top Movers:</p>
+
       <div class="input_container">
+        <input type='text' id='tickertxt' name='tickertxt' placeholder="INPUT HERE"
+        oninput="let p=this.selectionStart;this.value=this.value.toUpperCase();this.setSelectionRange(p, p);"/>
+        <button id="tickersbmt" onclick="stockshow()">SUBMIT</button>
       </div>
+
       <div class="floppy_container">#N/A
         <button class='floppy' id='floppy1' onclick="stockshow('0')">#N/A</button>
         <button class='floppy' id='floppy2' onclick="stockshow('1')">#N/A</button>
@@ -44,8 +49,10 @@
     </div>
 
     <div class='main_container'>
-      <h2>Bulls</h2>
-      <h2>Bears</h2>
+      <!--<h2>Bulls</h2>
+      <h2>Bears</h2>-->
+      <div id='stocktwits-widget-news'></div>
+
       <img class='monitor' id="monitor" src="images/monitor.png" alt="computer monitor" />
       <div class='screen' id="screen"></div>
       <div class='top' id="desk1"></div>
@@ -57,7 +64,9 @@
         <p id="ticker"></p>
         <canvas id="chartarea"></canvas>
       </div>
-      <div class="footer"></div>
+
+      <div class="footer">
+      </div>
 
     </div>
 

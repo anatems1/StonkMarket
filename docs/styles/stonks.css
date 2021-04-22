@@ -7,8 +7,9 @@
   margin: 0 auto;
 }
 
-p, .floppy {
+p, .floppy, #tickertxt, #tickersbmt, h2 {
   font-family: testfont;
+  color: white;
 }
 
 body {
@@ -111,7 +112,7 @@ body {
 .menu_container{
   height:127px;
   display: grid;
-  grid-template-columns: 50% 50% 100px;;
+  grid-template-columns: 25% 75% 100px;;
   grid-template-rows: 25px 102px;
   background-color: black;
   overflow-x: hidden;
@@ -120,6 +121,7 @@ body {
 #inputtxt, #movertxt {
   grid-row: 1/1;
   color: white;
+  text-decoration: underline;
 }
 
 #inputtxt {
@@ -129,6 +131,7 @@ body {
 #movertxt {
   grid-column: 2/2;
 }
+
 .input_container {
   background-color: black;
   grid-column: 1/1;
@@ -136,6 +139,22 @@ body {
   height: 100%;
   width: 100%;
   z-index: 3;
+  padding: 15px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#tickertxt, #tickersbmt {
+  border: 2px solid #66c0f4;
+  border-radius: 4px;
+  height: 40%;
+  width: 50%;
+  background-color: #2a475e;
+  padding: 0;
+  font-size: 20px;
+  space: 0;
+  text-align: center;
 }
 
 .floppy_container {
@@ -145,7 +164,7 @@ body {
   background-color: black;
   width: 2000px;
   height: 100%;
-  animation: slide2 35s linear infinite;
+  animation: slide2 20s linear infinite;
 }
 
 .floppy {
@@ -173,7 +192,7 @@ body {
     transform: translate3d(0, 0, 0);
   }
   100%{
-    transform: translate3d(-3000px, 0, 0); /* The image width */
+    transform: translate3d(-225vw, 0, 0); /* The image width */
   }
 }
 
