@@ -3,6 +3,8 @@ function init() {
   theme();
   topmovers();
   noreload();
+  document.getElementById('fade2').style.visibility = 'hidden';
+  document.getElementById('fade3').style.visibility = 'hidden';
 }
 
 /*GLOBAL VARIABLES********%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
@@ -31,7 +33,13 @@ function topmovers() {
 function stockshow(choice) {
   /*fades static on screen away*/
   var fadeTarget = document.getElementById('screen');
+
   document.getElementById('ticker').textContent = "";
+
+  var fade2 = document.getElementById('fade2');
+  var fade3 = document.getElementById('fade3');
+  fade2.style.visibility='visible';
+  fade3.style.visibility='visible';
 
   /*document.getElementById('monitor').style.display = "none";*/
   if (pcnt[choice] < 0) {
@@ -57,18 +65,23 @@ function stockshow(choice) {
     }
   }
 
-
+var count3 = 0;
 
 var fadeEffect = setInterval(function() {
   if (!fadeTarget.style.opacity) {
     fadeTarget.style.opacity = 1;
   }
   if (fadeTarget.style.opacity > 0) {
-    fadeTarget.style.opacity -= 0.1;
+    fadeTarget.style.opacity -= 0.05;
+    count3 +=1;
+    fade2.style.height = count3*30 + 'px';
+    fade3.style.height = count3*30 + 'px';
   } else {
     clearInterval(fadeEffect);
   }
+
 }, 100);
+
 
 var cnv = document.getElementById('chartarea');
 var ctx = cnv.getContext('2d');
@@ -182,7 +195,8 @@ function noreload() {
 function resizer() {
   var cnv = document.getElementById('headcanvas');
   var ctx = cnv.getContext('2d');
-  ctx.clearRect(0, 0, 2000, 110);
+  ctx.clearRect(0, 0, cnv.width, 110);
+
 }
 
 /*ANIMATED HEADER CANVAS %%%%%%%%%%%%%%%%%%%%S%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
@@ -213,7 +227,7 @@ function drawcanva() {
       count1 = count1 + 1;
     } else if (count1 > 8) {
       count1 = 0;
-      ctx.clearRect(0, 0, 2000, 110);
+      ctx.clearRect(0, 0, cnv.width, 110);
     }
     ctx.lineWidth = 6;
     ctx.strokeStyle = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);

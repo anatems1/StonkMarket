@@ -252,6 +252,54 @@ body {
   font-size: 25px;
 }
 
+
+.bull, .bear {
+  background-color: #2a475e;
+  grid-row: 1/4;
+  z-index: 5;
+  width: 60%;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  border: 1px solid #66c0f4;
+  height: 0;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+#bullhead, #bearhead {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  text-align: center;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50px;
+  background-color: #2f3033;
+  border-bottom: 1px solid #66c0f4;
+}
+
+#bullimg, #bearimg {
+  height: 100%;
+}
+
+.bull {
+  grid-column: 1/1;
+}
+
+.bear {
+  grid-column: 3/3;
+}
+
+#twit {
+  width: 100%;
+  height: 50px;
+  padding: 10px auto;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
 /*CSS DESK! ******%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 .top, .leg {
   background-image: url("../images/woodbg1.png");
@@ -297,4 +345,24 @@ body {
   grid-row: 6/6;
   height: 100%;
   width: 100%;
+  text-align: center;
+}
+
+.pwr {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+}
+/*SCROLLBARR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+::-webkit-scrollbar {
+  width: 5px;
+  right: 5px;
+  position:absolute;
+  z-index: 10;
+  background-color: black;
+}
+::-webkit-scrollbar-thumb {
+  background: #dddebb;
+  border-radius:10px;
 }
